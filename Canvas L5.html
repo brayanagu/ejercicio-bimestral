@@ -31,29 +31,15 @@
                        //Descripcion de lineas
                        ctx.lineWidth = 25;
                        ctx.strokeStyle = "yellow";
-                       //Dibujamos lineas
+                       //Dibujamos esquina
                        ctx.beginPath();
-                       ctx.moveTo(50,50);
-                       ctx.lineTo(450,50);
+                       //ctx.lineJoin = "round";
+                       ctx.lineJoin = "bevel";
+                       //ctx.lineJoin = "mitter";
+                       ctx.moveTo(75,150);
+                       ctx.lineTo(125,50);
+                       ctx.lineTo(175,150);
                        ctx.stroke();
-                       //Segunda linea
-                       ctx.beginPath();
-                       ctx.lineCap = "round";
-                       ctx.moveTo(50,100);
-                       ctx.lineTo(450,100);
-                       ctx.stroke();
-                       //Tercer linea
-                       ctx.beginPath();
-                       ctx.lineCap = "square";
-                       ctx.moveTo(50,150);
-                       ctx.lineTo(450,150);
-                       ctx.stroke();
-                       //Cuarta linea
-                       ctx.beginPath();
-                       ctx.lineCap = "butt";
-                       ctx.moveTo(50,200);
-                       ctx.lineTo(450,200);
-                       ctx.stroke();   
                      }
                      else
                      {
