@@ -28,18 +28,25 @@
                    var ctx = canvas.getContext("2d");
                    if(ctx)
                    {
-                       //Descripcion de lineas
-                       ctx.lineWidth = 25;
-                       ctx.strokeStyle = "yellow";
-                       //Dibujamos esquina
-                       ctx.beginPath();
-                       //ctx.lineJoin = "round";
-                       ctx.lineJoin = "bevel";
-                       //ctx.lineJoin = "mitter";
-                       ctx.moveTo(75,150);
-                       ctx.lineTo(125,50);
-                       ctx.lineTo(175,150);
-                       ctx.stroke();
+                      ctx.lineWidth = 10;
+                      ctx.fillStyle = "yellow";
+                      ctx.strokeStyle = "red";
+                      //Primer cuadro
+                      ctx.fillRect(50,50,100,100);
+                      ctx.strokeRect(50,50,100,100);
+                      //Salvamos estado
+                      ctx.save()
+                      //Modificamos los colores
+                      ctx.fillStyle = "black";
+                      ctx.strokeStyle= "white";
+                      //Segunado cuadro
+                      ctx.fillRect(200,50,100,100);
+                      ctx.strokeRect(200,50,100,100);
+                      //Restauramos colores
+                      ctx.restore();
+                      //Tercer cuadro
+                      ctx.fillRect(350,50,100,100);
+                      ctx.strokeRect(350,50,100,100);
                      }
                      else
                      {
