@@ -28,22 +28,31 @@
                    var ctx = canvas.getContext("2d");
                    if(ctx)
                    {
-                       //Descripcion de lineas
+                       //Colores
                        ctx.lineWidth = 10;
-                       ctx.strokeStyle = "yellow";
-                       ctx.fillStyle = "red";
-                       //Primer arco
+                       ctx.strokeStyle = "red";
+                       ctx.fillStyle = "yellow";
+
+                       //Curva bezier
                        ctx.beginPath();
-                       ctx.arc(100,150,50,1.1*Math.PI, 1.9*Math.PI);
+                       //Primer punto
+                       ctx.moveTo(50,20);
+                       //Dibujamos la curva
+                       ctx.bezierCurveTo(50,100,200,100,200,150);
+                       //Dibujamos la curva
                        ctx.stroke();
-                       //Segundo arco
-                       ctx.beginPath();
-                       ctx.arc(250,150,50,1.1*Math.PI, 1.9*Math.PI,true);
-                       ctx.stroke();
-                       //Tercer arco
-                       ctx.beginPath();
-                       ctx.arc(400,150,50, 0, 2*Math.PI,true);
-                       ctx.stroke();
+
+                       //Primer punto
+                       ctx.fillRect(50,20,5,5);
+
+                       //Primer punto tangente
+                       ctx.fillRect(50,100,5,5);
+
+                       //Segundo punto tangente
+                       ctx.fillRect(200,100,5,5);
+
+                       //Segundo punto ancla
+                       ctx.fillRect(200,150,5,5);
                      }
                      else
                      {
