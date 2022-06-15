@@ -28,35 +28,29 @@
                    var ctx = canvas.getContext("2d");
                    if(ctx)
                    {
-                    var gradiente = ctx.createRadialGradient(canvas.width/2,
-                      canvas.height,
-                      10,
-                      canvas.width/2,
-                      0,
-                      100);
-                      gradiente.addColorStop(0, "pink");
-                      gradiente.addColorStop(0.15, "yellow");
-                      gradiente.addColorStop(0.35, "white");
-                      gradiente.addColorStop(0.65, "yellow");
-                      gradiente.addColorStop(1, "red");
-                      ctx.fillStyle = gradiente;
-                      ctx.fillRect(0,0,canvas.width, canvas.height);
-
-                      var gradiente = ctx.createRadialGradient(
-                      canvas.width/2,
-                      canvas.height/2,
-                      10,
-                      canvas.width/2,
-                      canvas.height/2,
-                      300);
-                      gradiente.addColorStop(0, "pink");
-                      gradiente.addColorStop(0.15, "yellow");
-                      gradiente.addColorStop(0.35, "white");
-                      gradiente.addColorStop(0.65, "yellow");
-                      gradiente.addColorStop(1, "red");
-
-                      ctx.fillStyle = gradiente;
-                      ctx.fillRect(0,0,canvas.width, canvas.height);
+                       //Variables
+                       var bola = new Image();
+                       //Funciones
+                       function muestraPatron(repite)
+                       {
+                           ctx.font = "7em verdana";
+                           ctx.lineWidth = 1.0;
+                           ctx.fillStyle = "blue";
+                           ctx.strokeStyle = "yellow";
+                           //
+                           var patron = ctx.createPattern(bola,repite);
+                           ctx.clearRect(0,0,canvas.width, canvas.height);
+                           ctx.fillStyle = patron;
+                           ctx.fillRect(0,0,canvas.width, canvas.height);
+                           //ctx.fillText("HOLA",15,150);
+                       }
+                       //Inicio
+                       bola.src = "img/bola.png";
+                       bola.onload = function(e)
+                       {
+                           muestraPatron("repeat");
+                       }
+  
                     }
                     else
                     {
