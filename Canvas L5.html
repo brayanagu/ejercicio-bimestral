@@ -28,29 +28,21 @@
                    var ctx = canvas.getContext("2d");
                    if(ctx)
                    {
-                       //Variables
-                       var bola = new Image();
-                       //Funciones
-                       function muestraPatron(repite)
-                       {
-                           ctx.font = "7em verdana";
-                           ctx.lineWidth = 1.0;
-                           ctx.fillStyle = "blue";
-                           ctx.strokeStyle = "yellow";
-                           //
-                           var patron = ctx.createPattern(bola,repite);
-                           ctx.clearRect(0,0,canvas.width, canvas.height);
-                           ctx.fillStyle = patron;
-                           ctx.fillRect(0,0,canvas.width, canvas.height);
-                           //ctx.fillText("HOLA",15,150);
-                       }
-                       //Inicio
-                       bola.src = "img/bola.png";
-                       bola.onload = function(e)
-                       {
-                           muestraPatron("repeat");
-                       }
-  
+                      //
+                      ctx.font = "3em Verdana";
+                      ctx.lineWidth = 1.0;
+                      ctx.fillStyle = "blue";
+                      ctx.strokeStyle = "yellow";
+                      //
+                      ctx.shadowColor = "black";
+                      ctx.shadowOffsetX = 5;
+                      ctx.shadowOffsetY = 5;
+                      ctx.shadowBlur = 10;
+                      //
+                      ctx.fillText("CANVAS", 35, 150);
+                      ctx.strokeText("CANVAS",35,150);
+                      ctx.fillRect(200,200,150,50);
+                      //
                     }
                     else
                     {
